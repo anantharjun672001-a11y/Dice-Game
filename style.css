@@ -1,9 +1,10 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
+
 .main {
   width: 100%;
   min-height: 100vh;
@@ -18,7 +19,7 @@
   justify-content: center;
   align-items: center;
 }
-.header b{
+.header b {
   font-size: 14px;
   color: green;
   padding: 10px;
@@ -26,20 +27,22 @@
 .header h1 {
   letter-spacing: 1px;
 }
-.game{
-    display: flex;
-    justify-content: space-evenly;
+.game {
+  display: flex;
+  justify-content: space-evenly;
 }
-.player{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
+
 .player h3 {
   letter-spacing: 1px;
   font-size: 17px;
 }
+
 .player button {
   background-color: green;
   color: white;
@@ -49,6 +52,12 @@
   border: none;
   cursor: pointer;
 }
+
+.player button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 .dice {
   color: green;
   /* font-size: 40px; */
@@ -57,13 +66,36 @@
   width: 130px;
 }
 
+.rotate {
+  animation: diceRoll 1s linear;
+}
+
+@keyframes diceRoll {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  75% {
+    transform: rotateZ(270deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 .reset {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.reset button{
+
+.reset button {
   background-color: red;
   color: white;
   outline: none;
